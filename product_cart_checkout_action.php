@@ -34,7 +34,7 @@ if (isset($_POST['checkout']) && $item_count > 0) {
     }
 
     // Turn autocommit off
-    mysqli_autocommit($con, FALSE);
+    // mysqli_autocommit($$conn, FALSE);
 
     try {
 

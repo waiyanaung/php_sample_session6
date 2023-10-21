@@ -1,16 +1,4 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               5.7.25-0ubuntu0.16.04.2 - (Ubuntu)
--- Server OS:                    Linux
--- HeidiSQL Version:             9.3.0.4984
--- --------------------------------------------------------
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
--- Dumping database structure for test_db2
 CREATE DATABASE IF NOT EXISTS `test_db2` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `test_db2`;
 
@@ -125,7 +113,7 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`, `email`, `status`,`ro
 -- Dumping structure for table test_db2.products
 CREATE TABLE IF NOT EXISTS `transactions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date` date DEFAULT (current_date),  
+  `date` date  DEFAULT NULL, 
   `total_disc` decimal(10,2) DEFAULT NULL,
   `total_amt` decimal(10,2) DEFAULT NULL,
   `total_tax` decimal(10,2) DEFAULT NULL,
@@ -173,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `transaction_item` (
 CREATE TABLE IF NOT EXISTS `transaction_payment` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `transaction_id` int(11) NOT NULL,
-  `date` date DEFAULT (current_date),  
+  `date` date   DEFAULT NULL, 
   `paid_amt` decimal(10,2) DEFAULT NULL,
   `advanced_amt` decimal(10,2) DEFAULT NULL,
   `payment_type` int(11) DEFAULT '1',
